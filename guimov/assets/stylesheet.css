@@ -1,0 +1,422 @@
+/* HTML tag */
+body{
+    margin: 0;
+}
+
+.guimov_alert {
+    color : #a40000;
+    background-color: #ffaeae;
+
+    padding : 10px 10px;
+    margin  : 5px 5px;
+    border  : solid #ff7676 1px;
+    border-radius : 10px;
+}
+
+.guimov_info {
+    color : #006323;
+    background-color: #bfe8ce;
+
+    padding: 10px 10px;
+    margin  : 5px 5px;
+    border : solid #84d3a0 1px;
+    border-radius: 10px;
+}
+
+.guimov_tooltip {
+    background-color: #93c6d6;
+    opacity: 70%;
+    border-radius: 5px;
+    margin-left: 4px;
+    padding: 4px;
+    width: 15%;
+    text-align: center;
+}
+
+#Overview_tab {
+    background-color: #93c6d6;
+    border-radius: 30px;
+    padding: 15px 25px;
+    margin: 5px 10px;
+    border : none;
+}
+#Overview_tab.tab--selected {
+    border: 2px black solid;
+}
+#QCs_tab {
+    background-color: #93c6d6;
+    border-radius: 30px;
+    padding: 15px 25px;
+    margin: 5px 10px;
+    border : none;
+}
+#QCs_tab.tab--selected {
+    border: 2px black solid;
+}
+#Embedding_tab {
+    background-color: #93c6d6;
+    border-radius: 30px;
+    padding: 15px 25px;
+    margin: 5px 10px;
+    border : none;
+}
+#Embedding_tab.tab--selected {
+    border: 2px black solid;
+}
+#Distribution_tab {
+    background-color: #93c6d6;
+    border-radius: 30px;
+    padding: 15px 25px;
+    margin: 5px 10px;
+    border : none;
+}
+#Distribution_tab.tab--selected {
+    border: 2px black solid;
+}
+#GeneDiff_tab {
+    background-color: #93c6d6;
+    border-radius: 30px;
+    padding: 15px 25px;
+    margin: 5px 10px;
+    border : none;
+}
+#GeneDiff_tab.tab--selected {
+    border: 2px black solid;
+}
+#Pathways_tab {
+    background-color: #93c6d6;
+    border-radius: 30px;
+    padding: 15px 25px;
+    margin: 5px 10px;
+    border : none;
+}
+#Pathways_tab.tab--selected {
+    border: 2px black solid;
+}
+#Clustering_tab {
+    background-color: #93c6d6;
+    border-radius: 30px;
+    padding: 15px 25px;
+    margin: 5px 10px;
+    border : none;
+}
+#Clustering_tab.tab--selected {
+    border: 2px black solid;
+}
+#Options_tab {
+    background-color: #93c6d6;
+    border-radius: 30px;
+    padding: 15px 25px;
+    margin: 5px 10px;
+    border : none;
+}
+#Options_tab.tab--selected {
+    border: 2px black solid;
+}
+
+.guimov_input{
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px gray solid;
+    margin : 5px 5px;
+}
+
+.guimov_input_disable{
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px gray solid;
+    margin : 5px 5px;
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.40;
+    filter: alpha(opacity=40);
+}
+
+#texte_area_pa.guimov_input{
+    width: 100%;
+}
+
+.guimov_button {
+    background-color: white;
+    padding: 7px 7px;
+    border-radius: 7px;
+    border: 1px gray solid;
+    margin : 5px 5px;
+}
+
+.guimov_dropdown {
+    margin: 5px 5px;
+}
+
+.guimov_slider {
+    margin: 20px 5px;
+}
+
+.guimov_toggle {
+    margin: 5px 5px;
+}
+
+/* common to all tabs */
+.guimov_H1 {
+    text-align: center;
+    font-size: 2.5em;
+    grid-row: 1;
+    background-color: #93c6d6;
+}
+
+.guimov_disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.40;
+    filter: alpha(opacity=40);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+.guimov_main{
+    display : grid;
+    grid-template-rows: minmax(50px, 5%) auto;
+    height: 100vh;
+    background-color: #FAFAFA;
+}
+
+.guimov_parent_tabs{
+    /* border : dashed yellow; */
+    grid-row: 2;
+}
+
+.guimov_content_tabs{
+    flex: 6;
+}
+
+.guimov_tabs{
+    flex: 1;
+}
+
+.guimov_tabs_layout {
+    /* border: dashed green; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+ /* use in tabs */
+.guimov_container {
+    /* border: dashed purple; */
+    flex : 1;
+    width: available;
+    display: flex;
+    justify-content: space-around;
+}
+
+.guimov_parameters {
+    /*  border: dashed orange; */
+    flex : 1;
+    display : flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.guimov_graphics {
+    /* border: dashed red; */
+    flex : 4;
+}
+
+ /* use in Overview */
+.guimov_overview_labels{
+    /* border: dashed red; */
+    flex : 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 4%;
+    margin: 2% 2%;
+
+}
+
+.guimov_label_ov{
+    background-color: #93c6d6;
+    border-radius: 10px;
+
+}
+
+.guimov_title_caract_ov{
+    font-size: 1em;
+    border-bottom : solid #212227;
+    margin: 2% 4%;
+}
+
+.guimov_info_caract_ov{
+    box-sizing: border-box;
+    margin: 10% 8%;
+}
+
+ /* use in Embedding */
+#umap_em {
+    height: 80%;
+    width: 80%;
+
+    margin-right : 10%;
+    margin-left: 10%;
+
+    background-color: whitesmoke;
+}
+
+.guimov_loading{
+    margin-top: 25%;
+}
+
+.guimov_layout_cl{
+    /* border: dashed green; */
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+    height: 100%;
+}
+
+ /* use in QCs */
+.guimov_layout_qc{
+    /* border: dashed green; */
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+    height: 100%;
+}
+
+.guimov_parameters_1_qc{
+    /* border: orange dashed; */
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+}
+
+.guimov_parameters_1_qc > *{
+    width: 100%;
+}
+
+.guimov_parameters_2_qc{
+    /* border: orange dashed; */
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+}
+
+.guimov_parameters_2_qc > *{
+    width: 100%;
+}
+
+#graph-1-QCs-2 {
+    height: 90%;
+    width: 80%;
+
+    margin-right : 10%;
+    margin-left: 10%;
+}
+
+#graph-1-QCs{
+    height: 90%;
+    width: 80%;
+
+    margin-right : 10%;
+    margin-left: 10%;
+}
+
+.guimov_graphics_1_qc{
+    /* border : purple dashed; */
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.guimov_graphics_2_qc{
+    /* border : purple dashed; */
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* use in Pathway*/
+.guimov_layout_pa{
+    display: flex;
+}
+
+.guimov_left_pa{
+    /* border: dashed red; */
+    flex: 1;
+}
+
+.guimov_right_pa{
+    /* border: dashed green; */
+    flex: 1;
+}
+
+.guimov_input_file{
+    margin: 5%;
+    padding: 5%;
+    border: dashed blue;
+}
+
+.guimov_text_area{
+    resize: none;
+    width: 99%;
+}
+
+
+/* ID Spec */
+#opacity_qc{
+    width: 85%;
+}
+
+#nb_genes_gd{
+    width: 85%;
+}
+
+#pct_cells_cl{
+    width: 85%;
+}
+
+#points_size_cl{
+    width: 85%;
+}
+
+#table_gd{
+    margin-left: 5%;
+    width: 85%;
+    text-align: center;
+}
+
+.dash-table-container{
+    text-align: center;
+}
+
+#table_pa{
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+}
+
+#heatmap_gd{
+    margin-left: 5%;
+    width: 85%;
+}
+
+#table_pa{
+    margin-top: 5%;
+}
+
+#umap_cl{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#sankey_plot_cl{
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 90%;
+}
+
+#alert_pa{
+    margin: 5%;
+    width: 90%
+}
