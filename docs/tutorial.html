@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial &mdash; GUIMOV 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GUIMOV’s functions" href="functions.html" />
+    <link rel="prev" title="Datasets requirements" href="datasets.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> GUIMOV
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#qcs">QCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#embedding">Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#distribution">Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#differentially-express-genes">Differentially express genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clustering">Clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pathways">Pathways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">GUIMOV’s functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GUIMOV</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tutorial.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading"></a></h1>
+<p>GUIMOV provide severals functions divide in tabs. Each tabs focus on a main purpose and offer some tools
+or graphs to explore it.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>Each dataset has a unique code, which is given by the bioinformatic team.
+For more safety the server only store the code’s hash.</p>
+<img alt="_images/overview.png" src="_images/overview.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="qcs">
+<h2>QCs<a class="headerlink" href="#qcs" title="Permalink to this heading"></a></h2>
+<img alt="_images/qcs.png" src="_images/qcs.png" />
+<ol class="arabic simple">
+<li><p>Select the feature type you want to explore, it may have multiple features in multi omics datasets, or when several datasets are gather.</p></li>
+<li><p>Show groups, stacked (like the screen) or one behind the other.</p></li>
+<li><p>When a gene is selected (5 and 6 are optional) you can display his expressionon Y axis (1 screen) or on X axis of first plot and Y axis of second plot (2 screen).</p></li>
+<li><p>Select a numerical metadata (real values) to display on graphs (display on second graph if any gene are selected or if gene expression is display on Y axis).</p></li>
+<li><p>Select a gene to explore his expression (write the first letter to show all options of the dropdown).</p></li>
+<li><p>Select a numerical metadata to display when gene expression is display on X axis.</p></li>
+<li><p>When groups are display one behind the other, it can be useful to change the opactiy of all groups.</p></li>
+<li><p>Select a categorical metadata (clusters, sample, etc) to display on both graphs.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="embedding">
+<h2>Embedding<a class="headerlink" href="#embedding" title="Permalink to this heading"></a></h2>
+<img alt="_images/embeddings.png" src="_images/embeddings.png" />
+<ol class="arabic simple">
+<li><p>Features type</p></li>
+<li><p>Select which embeddind to use (coordinates of cells). Select ‘spatial ’ with a spatial dataset to display the image of sample behind points.</p></li>
+<li><p>Seletec metadata to explore (change the color of graph)</p></li>
+<li><p>Seletec one or more gene (sum expression)(priority against metadata)</p></li>
+<li><p>When embedding allow it permit to display a 3d graph (which can be move in all directions)</p></li>
+<li><p>Percentage of cells to display (randomly choose). Use it for large datasets (&gt;10’000 cells) or with a small computer.</p></li>
+<li><p>Size of points on the graph</p></li>
+<li><p>Range of color to use when display a numerical metadata</p></li>
+<li><p>Percentage of points opacity, usable only with spatial datasets.</p></li>
+<li><p>Save graph in svg format</p></li>
+<li><p>In order to compute Differential Expression on choosen cells, use the ‘lasso’ tool of plotly to select cells. Then press ‘cells selection 1’, repeat for the second selection. Chose the name of the DE and compute with ‘compute DE’. The resuls can be seen in the Differential Expression tab.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="distribution">
+<h2>Distribution<a class="headerlink" href="#distribution" title="Permalink to this heading"></a></h2>
+<img alt="_images/distribution.png" src="_images/distribution.png" />
+<ol class="arabic simple">
+<li><p>Features type</p></li>
+<li><p>First categorical metadata</p></li>
+<li><p>Second categorical metadata</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="differentially-express-genes">
+<h2>Differentially express genes<a class="headerlink" href="#differentially-express-genes" title="Permalink to this heading"></a></h2>
+<img alt="_images/ranktest.png" src="_images/ranktest.png" />
+<ol class="arabic simple">
+<li><p>Features type</p></li>
+<li><p>Differential Expression already calculated</p></li>
+<li><p>Clusters to explore in table (default all clusters included)</p></li>
+<li><p>Numbers of Genes per clusters in the heatmap</p></li>
+<li><p>Export all genes in csv. (very large file, nbGenes * nbClusters rows)</p></li>
+<li><p>Export the table in csv.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="clustering">
+<h2>Clustering<a class="headerlink" href="#clustering" title="Permalink to this heading"></a></h2>
+<img alt="_images/clusters.png" src="_images/clusters.png" />
+<ol class="arabic simple">
+<li><p>Features type</p></li>
+<li><p>Embedding use for the first graph</p></li>
+<li><p>Clustering use for the first graph and at the top of the second one</p></li>
+<li><p>Clustering use at the bottom of the second graph</p></li>
+<li><p>Percentage of cells to display</p></li>
+<li><p>Size of points in first graph</p></li>
+<li><p>Select the resolution of clustering</p></li>
+<li><p>Calculate clustering with selected resolution to use in 3. and 4.</p></li>
+<li><p>Load 3. clustering in dataset as categorical metada</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="pathways">
+<h2>Pathways<a class="headerlink" href="#pathways" title="Permalink to this heading"></a></h2>
+<img alt="_images/pathways.png" src="_images/pathways.png" />
+<ol class="arabic simple">
+<li><p>Features type</p></li>
+<li><p>Select Genes to add in pathways, write first letter to see suggestion</p></li>
+<li><p>Write or copy / paste genes, split with comma without spaces.</p></li>
+<li><p>Enter name of pathways</p></li>
+<li><p>Get genes from first columns of csv or excel files.</p></li>
+<li><p>Run the pathways, the results is store as numerical metadata in dataset.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h2>
+<p>Loading …</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datasets.html" class="btn btn-neutral float-left" title="Datasets requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="functions.html" class="btn btn-neutral float-right" title="GUIMOV’s functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Thibaut Peyric.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
