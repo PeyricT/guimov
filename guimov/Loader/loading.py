@@ -12,6 +12,7 @@ from .mudata_loading import *
 from .._utils import tools as tl
 from .._main_callbacks import write_log
 
+import scanpy as sc
 
 def check_hash(code):
     """
@@ -22,9 +23,7 @@ def check_hash(code):
     if code == '8b1c1c1eae6c650485e77efbc336c5bfb84ffe0b0bea65610b721762':
         if not exists(settings.datasets_path+'spatial.h5ad'):
             write_log(f'downloading spatial demo datasets', 'GUIMOV-system', '-1')
-            request.urlretrieve(
-                'https://github.com/Shellloman/test-docs/raw/gh-pages/datasets/pbmc3k.h5ad', settings.datasets_path+'spatial.h5ad'
-            )
+            sc.datasets.visium_sge(sample_id="V1_Human_Lymph_Node").write(settings.datasets_path+'spatial.h5ad')
         else:
             write_log(f'loading spatial demo datasets', 'GUIMOV-system', '-1')
         tl.datasets[code] = {'rna': ad.read_h5ad(settings.datasets_path+'spatial.h5ad')}

@@ -12,7 +12,7 @@ allow interactive cells or groups selections, high resolution images and a free 
 web application with secure access to datasets and simple deployment in environment. Distribution of a docker image
 ensure no dependencies and portability.  Otherwise, it is available as a python package
 
-Check the Documentation to know how install and use GUIMOV.
+Check the [Documentation](https://peyrict.github.io/guimov/) to know how install and use GUIMOV.
 
 ## Contents
 ___
@@ -37,7 +37,7 @@ information like the cell type, conditions, samples and more to choose the final
 + **Pathways**: A pathway is defined here as a set of genes that must be explored together. We usually want to know if 
 they are differentially expressed between groups of cells in the dataset
 
-##Methods
+## Methods
 ___
 	
 ### Package
