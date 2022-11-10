@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to GUIMOV's documentation!
-=================================
+===================================
 
 GUIMOV is an open source interface for single cell RNA seq visualisation.
 The code is available on github_.
@@ -19,4 +19,4 @@ The code is available on github_.
    ./functions.rst
    ./release_notes.rst
 
-.. _github: https://gitlab.com/pfgt/sandbox/GUIMOVapp
+.. _github: https://github.com/PeyricT/guimov

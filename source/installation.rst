@@ -6,13 +6,13 @@ pip, docker or from source for installed it. After the installation look at
 `datasets requirements`_ to add your own datasets, then tutorials_ to learn how use GUIMOV.
 
 pip
-----------
+----
 
 GUIMOV is available as a package. It is not already on PyPI but you could install it
 easily with this code.
 
 
->>> pip install git+https://gitlab.com/pfgt/sandbox/GUIMOVapp.git
+>>> pip install git+https://github.com/PeyricT/guimov.git
 
 Using Python
 ~~~~~~~~~~~~~
@@ -33,11 +33,11 @@ If you want explore a single dataset, prefere using the following command
 using Bash
 ~~~~~~~~~~~
 
->>> guimov_launch --datasets=Path/to/your/datasets/file --logs=Path/to/your/logs/file
+>>> guimov_launch --datasets Path/to/your/datasets/file --logs Path/to/your/logs/file
 
 If you want explore a single dataset, prefere using the following command
 
->>> guimov_launch --singledataset=Path/to/your/dataset
+>>> guimov_launch --singledataset Path/to/your/dataset
 
 
 Docker
@@ -54,8 +54,8 @@ From source
 
 GUIMOV provide an requirements.txt file, in order to quickly install all dependencies.
 
->>> git clone https://gitlab.com/pfgt/sandbox/GUIMOVapp.git
->>> cd GUIMOVapp
+>>> git clone https://github.com/PeyricT/guimov.git
+>>> cd guimov
 >>> pip install -r requirements.txt
 
 Then you can start the interface with the following command :

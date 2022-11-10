@@ -1,5 +1,5 @@
 GUIMOV's functions
-=================
+===================
 
 .. automodule:: guimov
     :members:
