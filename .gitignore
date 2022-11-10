@@ -2,6 +2,5 @@
 datasets/*.h5ad
 datasets/*.h5mu
 datasets/*.txt
-build/*
 *.egg-info
 __pycache__/
