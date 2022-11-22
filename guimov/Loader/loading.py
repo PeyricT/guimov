@@ -25,7 +25,7 @@ def check_hash(code):
             tl.download_demo()
         else:
             write_log(f'loading spatial demo datasets', 'GUIMOV-system', '-1')
-        tl.datasets[code] = {'rna': ad.read_h5ad(settings.datasets_path+'spatial.h5ad')}
+        tl.datasets[code] = {'rna': ad.read_h5ad(settings.datasets_path+'demo_spatial.h5ad')}
         tl.datasets[code]['rna'].uns['dataset_name'] = 'spatial'
 
         return True
