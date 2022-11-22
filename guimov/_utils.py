@@ -4,6 +4,8 @@ from threading import Lock
 import hashlib as hb
 import pandas as pd
 import numpy as np
+from os.path import exists
+import scanpy as sc
 import base64
 import dash
 import io
@@ -22,6 +24,7 @@ class Tools:
         self.app = dash.Dash(__name__)
         # Use to set the mod of the interface
         self.single_dataset = False
+        self.demo = False
         # use for default graphs
         self.iris = self.get_default_df()
         # use for figure
@@ -38,6 +41,9 @@ class Tools:
     def start_app(self, *args, dataset=None, **kwargs):
         if dataset is None:
             self.datasets_hash, self.datasets_in_use, self.datasets_path = self.setup_datasets()
+        elif dataset == 'demo':
+            self.single_dataset = True
+            self.demo = True
         else:
             self.single_dataset = True
             self.datasets_hash = {'c3937e84165709073627378f2587ce845d5058dcc220e5993ee2501d': dataset.split('/')[-1]}
@@ -80,6 +86,23 @@ class Tools:
         default_df['size'] = pd.Series(['short' if l < 4 else 'long' for l in default_df['petal_length']]).astype(
             'category')
         return default_df
+
+    
+    @staticmethod
+    def download_demo():
+            write_log(f'downloading spatial demo datasets', 'GUIMOV-system', '-1')
+            temp = sc.datasets.visium_sge(sample_id="V1_Human_Lymph_Node")
+            sc.pp.calculate_qc_metrics(temp, inplace=True)
+            sc.pp.normalize_total(temp, inplace=True)
+            sc.pp.log1p(temp)
+            sc.pp.highly_variable_genes(temp, flavor="seurat", n_top_genes=1000)
+            sc.pp.pca(temp)
+            sc.pp.neighbors(temp)
+            sc.pp.scale(temp)
+            sc.tl.umap(temp)
+            sc.tl.leiden(temp, resolution=0.7)
+            temp.write(settings.datasets_path+'demo_spatial.h5ad', compression='gzip', compression_opts=9)
+            
 
 
 def plot_sankey(df, source, target):
