@@ -90,7 +90,6 @@ class Tools:
     
     @staticmethod
     def download_demo():
-            write_log(f'downloading spatial demo datasets', 'GUIMOV-system', '-1')
             temp = sc.datasets.visium_sge(sample_id="V1_Human_Lymph_Node")
             sc.pp.calculate_qc_metrics(temp, inplace=True)
             sc.pp.normalize_total(temp, inplace=True)
