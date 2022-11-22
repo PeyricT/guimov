@@ -9,6 +9,7 @@ import scanpy as sc
 import base64
 import dash
 import io
+import os
 
 from guimov._settings import settings
 
@@ -100,6 +101,10 @@ class Tools:
             sc.pp.scale(temp)
             sc.tl.umap(temp)
             sc.tl.leiden(temp, resolution=0.7)
+            
+            path = '/'.join(settings.datasets_path.split('/')[:-1])
+            if not os.path.exists(path):
+                os.mkdir(settings.datasets_path.split('/')[-2])
             temp.write(settings.datasets_path+'demo_spatial.h5ad', compression='gzip', compression_opts=9)
             
 
