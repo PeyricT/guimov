@@ -21,7 +21,7 @@ def check_hash(code):
     :return bool:
     """
     if code == '8b1c1c1eae6c650485e77efbc336c5bfb84ffe0b0bea65610b721762':
-        if not exists(settings.datasets_path+'spatial.h5ad'):
+        if not exists(settings.datasets_path+'spatial_demo.h5ad'):
             tl.download_demo()
         else:
             write_log(f'loading spatial demo datasets', 'GUIMOV-system', '-1')
