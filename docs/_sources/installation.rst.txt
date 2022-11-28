@@ -14,6 +14,19 @@ easily with this code.
 
 >>> pip install git+https://github.com/PeyricT/guimov.git
 
+using Command line
+~~~~~~~~~~~~~~~~~~~
+
+>>> guimov_launch --datasets Path/to/your/datasets/file --logs Path/to/your/logs/file
+
+If you want explore a single dataset, prefere using the following command
+
+>>> guimov_launch --singledataset Path/to/your/dataset
+
+To start a quick demo use the following command
+
+>>> guimov_launch -s demo
+
 Using Python
 ~~~~~~~~~~~~~
 then you would be able to use GUIMOV as standar python package. In order to use your own
@@ -28,17 +41,6 @@ therefore default settings will be used and paths must not be found.
 If you want explore a single dataset, prefere using the following command
 
 >>> guimov.start(dataset='Path/to/your/dataset')
-
-
-using Bash
-~~~~~~~~~~~
-
->>> guimov_launch --datasets Path/to/your/datasets/file --logs Path/to/your/logs/file
-
-If you want explore a single dataset, prefere using the following command
-
->>> guimov_launch --singledataset Path/to/your/dataset
-
 
 Docker
 -----------
