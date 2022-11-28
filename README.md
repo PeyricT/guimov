@@ -4,6 +4,9 @@ Graphical Uuser Interface for Multi-Omics Visualisation
 
 ---
 
+<img src='./source/img/guimov_embeddings.png'>
+
+
 GUIMOV is an open-source Interface for multi-omics visualization providing the commonly used graphics and tools in single
 cell RNAseq analyses in an easily installed package. Based on Anndata format, it was made to explore scRNAseq, spatially
 resolved single cell and ATAC seq data, and also to refine analyses thanks to useful tools such as change cell

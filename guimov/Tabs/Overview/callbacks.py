@@ -45,7 +45,10 @@ def check_code(session, code, cluster_update, pathways_update, de_update, *_):
     alert_className = dash.no_update
 
     if tl.single_dataset:
-        code = 'dataset'
+        if tl.demo:
+            code = 'demo'
+        else:
+            code = 'dataset'
 
     if code is not None:
         code = hb.sha224(code.encode('utf-8')).hexdigest()

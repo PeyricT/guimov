@@ -4,9 +4,12 @@ from threading import Lock
 import hashlib as hb
 import pandas as pd
 import numpy as np
+from os.path import exists
+import scanpy as sc
 import base64
 import dash
 import io
+import os
 
 from guimov._settings import settings
 
@@ -22,6 +25,7 @@ class Tools:
         self.app = dash.Dash(__name__)
         # Use to set the mod of the interface
         self.single_dataset = False
+        self.demo = False
         # use for default graphs
         self.iris = self.get_default_df()
         # use for figure
@@ -38,6 +42,11 @@ class Tools:
     def start_app(self, *args, dataset=None, **kwargs):
         if dataset is None:
             self.datasets_hash, self.datasets_in_use, self.datasets_path = self.setup_datasets()
+        elif dataset == 'demo':
+            self.single_dataset = True
+            self.demo = True
+            self.datasets_hash = {'8b1c1c1eae6c650485e77efbc336c5bfb84ffe0b0bea65610b721762': 'spatial_demo.h5ad'}
+            self.datasets_in_use = {'8b1c1c1eae6c650485e77efbc336c5bfb84ffe0b0bea65610b721762': []}
         else:
             self.single_dataset = True
             self.datasets_hash = {'c3937e84165709073627378f2587ce845d5058dcc220e5993ee2501d': dataset.split('/')[-1]}
@@ -64,7 +73,7 @@ class Tools:
                     tmp_hash[hashd] = data
                     data_used[hashd] = []
 
-            tmp_hash['8b1c1c1eae6c650485e77efbc336c5bfb84ffe0b0bea65610b721762'] = 'pbmc3k.h5ad'
+            tmp_hash['8b1c1c1eae6c650485e77efbc336c5bfb84ffe0b0bea65610b721762'] = 'demo_spatial.h5ad'
             data_used['8b1c1c1eae6c650485e77efbc336c5bfb84ffe0b0bea65610b721762'] = []
 
         return tmp_hash, data_used, settings.datasets_path.replace('datasets.txt', '')
@@ -81,6 +90,25 @@ class Tools:
             'category')
         return default_df
 
+    @staticmethod
+    def download_demo():
+        path = '/'.join(settings.datasets_path.split('/')[:-1])
+        temp = sc.datasets.visium_sge(sample_id="V1_Human_Lymph_Node")
+        temp.var_names_make_unique()
+        sc.pp.calculate_qc_metrics(temp, inplace=True)
+        sc.pp.normalize_total(temp, inplace=True)
+        sc.pp.log1p(temp)
+        sc.pp.highly_variable_genes(temp, flavor="seurat", n_top_genes=1000)
+        sc.pp.pca(temp)
+        sc.pp.neighbors(temp)
+        sc.pp.scale(temp)
+        sc.tl.umap(temp)
+        sc.tl.leiden(temp, resolution=0.7)
+
+        if not os.path.exists(path):
+            os.mkdir(settings.datasets_path.split('/')[-2])
+        temp.write(settings.datasets_path+'demo_spatial.h5ad')
+            
 
 def plot_sankey(df, source, target):
     """
